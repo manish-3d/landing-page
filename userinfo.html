@@ -1,0 +1,8 @@
+<h2>Hello!</h2>
+<p id="output"></p>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const name = params.get("name");
+  document.getElementById("output").innerText = name;
+</script>

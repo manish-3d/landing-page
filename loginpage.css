@@ -1,0 +1,67 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+}
+#container{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    border: 0px solid black;
+
+}
+#logo-section{
+    border: 0px solid black;
+    width: 30%;
+    flex:2;
+    background: radial-gradient(circle, rgb(11,119,5), rgb(0,60,0));
+    height: 100vh;
+    
+}
+#logo-section{
+  position: relative;
+  flex: 1;
+  height: 100vh;
+  background: url("images/breakingbad2.png") center/cover no-repeat;
+}
+
+#logo-section::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5); /* dark overlay */
+}
+
+#loginpage{
+    border: 0px solid black;
+    width: 70%;
+    height: 100vh;
+    background: radial-gradient(circle, rgb(11,119,5), rgb(0,60,0));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#login-title{
+    width: 70%;
+    margin-top: 100px;
+    height: 30%;
+    border: 0px solid black;
+}
+#login-form{
+    width: 100%;
+    height: 70%;
+    border: 0px solid black;
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+#form1{
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+
+}
+

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loginpage</title>
+    <link rel="stylesheet" href="loginpage.css">
+</head>
+<body id="container">
+    <div id = "logo-section">
+       <img src="images/mylabreallogo_edited.png" height="70px" width="200px" alt="logo-section">
+    </div>
+    <div id = "loginpage">
+        <div id = "login-title">
+        <h1>-This is my own private daily log… and I will document it.</h1>
+        <div> "I’m here to cook — not out of force, but out of choice.
+        I’ll keep cooking for as long as it’s needed, because I was good at it.
+        I understood the process, I respected the grind,
+        and somewhere along the way… I started to love it."
+        </div>
+        </div>
+        <div id = "login-form">
+            <div id = "column1">
+            <form action="userinfo.html" method="get" id="form1">
+                <div>
+                    <label for="first-name">USER NAME-</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div>
+                    <label for="last-name">LAST NAME-</label>
+                    <input type="text" id = "last-name" name="last-name" required>
+                </div>
+                <div>
+                    <label for="email">EMAIL-</label>
+                    <input type="email" name="email" id="email" placeholder="xxxx@gmail.com">
+                </div>
+                </form>
+            </div>
+            <div id = "column2">
+            <form  action="userinfo.html" method="get" id="form1">
+                <div>
+                    <label for="password">PASSWORD-</label>
+                    <input type="password" id="password" name="password" placeholder="Enter-8 digit password.....">
+                </div>
+                <div>
+                    <label for="confirm-password">CONFIRM-PASSWORD-</label>
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="confirm entered password.....">
+                </div>
+                <div>
+                    <label for="phone-no">PHONE.NO-</label>
+                    <input type="tel" id="phone-no" name="phone-no" placeholder="Enter-phone-no.....">
+                </div>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+</html>
