@@ -2,40 +2,72 @@
     box-sizing: border-box;
     margin: 0px;
 }
+#bg-video{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+
+#container{
+    position: relative;
+    z-index: 1;
+}
+
+#container::before{
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 0;
+}
+#logo-section, #loginpage{
+    position: relative;
+    z-index: 1;
+}
 #container{
     display: flex;
     width: 100%;
     height: 100vh;
     border: 0px solid black;
-
 }
+
 #logo-section{
     border: 0px solid black;
     width: 30%;
-    flex:2;
-    background: radial-gradient(circle, rgb(11,119,5), rgb(0,60,0));
+    flex: 1;
     height: 100vh;
+    position: relative;
     
 }
-#logo-section{
-  position: relative;
-  flex: 1;
-  height: 100vh;
-  background: url("images/breakingbad2.png") center/cover no-repeat;
+
+
+
+#logo-1{
+    width: 200px;
+    margin:20px;
+    display: block;
+    position: relative;
+    z-index: 2;
+
+    transition: 0.3s ease;
 }
 
-#logo-section::before{
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.5); /* dark overlay */
+#logo-1:hover{
+    transform: scale(1.08);
+    filter: drop-shadow(0px 0px 15px rgb(1, 2, 1));
 }
+
+
 
 #loginpage{
     border: 0px solid black;
     width: 70%;
     height: 100vh;
-    background: radial-gradient(circle, rgb(11,119,5), rgb(0,60,0));
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -46,14 +78,17 @@
     width: 70%;
     margin-top: 100px;
     height: 30%;
+    color: rgb(168, 157, 143);
+    font-size: x-large;
     border: 0px solid black;
 }
+
 #login-form{
     width: 100%;
     height: 70%;
     border: 0px solid black;
     display: flex;
-    gap: 40px;
+    gap: 15%;
     justify-content: center;
     align-items: center;
 }
@@ -61,7 +96,30 @@
 #form1{
     display: flex;
     flex-direction: column;
-    gap: 100px;
+    gap: 50px;
+}
+input::placeholder{
+  color: rgb(0, 0, 0);
+}
+input{
+  border-radius: 10px;
+  background-color: rgb(169, 169, 151);
+}
+input:hover{
+  background-color: rgb(154, 8, 6);
+  color: aliceblue;
+  transform: scale(1.08);
+  filter: drop-shadow(16px 0px 15px rgb(0, 0, 0));
+  
 
 }
+label{
+  color: antiquewhite;
+}
+button:hover{
+  background-color: rgb(139, 21, 21);
+  color: rgb(249, 245, 245);
+  transform: scale(1.12);
+  filter: drop-shadow(0px 0px 15px rgb(0, 0, 0));
 
+}
