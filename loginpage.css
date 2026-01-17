@@ -2,6 +2,7 @@
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 /* Background video */
@@ -15,6 +16,16 @@
     z-index: -1;
 }
 
+/* Dark overlay */
+#container::before{
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    z-index: 0;
+}
+
+/* Main layout */
 #container{
     position: relative;
     z-index: 1;
@@ -23,34 +34,20 @@
     min-height: 100vh;
 }
 
-#container::before{
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.45);
-    z-index: 0;
-}
-
-#logo-section, #loginpage{
-    position: relative;
-    z-index: 1;
-}
-
 /* Logo section */
 #logo-section{
     width: 30%;
-    flex: 1;
-    min-height: 100vh;
     display: flex;
-    align-items: flex-start;
     justify-content: center;
+    align-items: flex-start;
     padding-top: 20px;
+    position: relative;
+    z-index: 1;
 }
 
 #logo-1{
     width: 220px;
     max-width: 90%;
-    margin: 20px;
     transition: 0.3s ease;
 }
 
@@ -62,90 +59,137 @@
 /* Login section */
 #loginpage{
     width: 70%;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 20px;
+    position: relative;
+    z-index: 1;
 }
 
 /* Title */
 #login-title{
     width: 90%;
-    max-width: 700px;
-    margin-top: 20px;
-    color: rgb(168, 157, 143);
-    font-size: 1.2rem;
+    max-width: 850px;
     text-align: center;
-    position: static;   /* removed top/left */
+    color: rgb(168, 157, 143);
+    margin-bottom: 20px;
 }
 
-/* Form area */
+#login-title h1{
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.quote{
+    font-size: 1rem;
+    opacity: 0.9;
+    line-height: 1.4;
+}
+
+/* Form layout */
 #login-form{
     width: 100%;
-    max-width: 800px;
+    max-width: 850px;
     display: flex;
     gap: 40px;
     justify-content: center;
     align-items: flex-start;
-    margin-top: 30px;
+    padding: 20px;
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 0px 25px rgba(0,0,0,0.4);
 }
 
-/* Forms */
+
+#column1, #column2{
+    flex: 1;
+}
+
+
 #form1, #form2{
     display: flex;
     flex-direction: column;
-    gap: 25px;
-    width: 100%;
+    gap: 22px;
 }
 
-/* Inputs */
+.input-box{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+
+label{
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 13px;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
 input{
     width: 100%;
-    padding: 10px;
-    border-radius: 10px;
-    background-color: rgb(169, 169, 151);
-    border: none;
+    padding: 12px 14px;
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    color: white;
+    font-size: 14px;
+
     outline: none;
+    transition: 0.25s ease;
+    backdrop-filter: blur(10px);
 }
 
 input::placeholder{
-    color: rgb(0, 0, 0);
+    color: rgba(255, 255, 255, 0.65);
 }
 
 input:hover{
-    background-color: rgb(243, 237, 237);
-    color: rgb(0, 0, 0);
+    border: 1px solid rgba(255, 255, 255, 0.5);
     transform: scale(1.03);
-    filter: drop-shadow(0px 0px 10px rgb(0, 0, 0));
 }
 
-label{
-    color: antiquewhite;
-    font-size: 0.95rem;
+input:focus{
+    border: 1px solid rgb(255, 70, 70);
+    box-shadow: 0px 0px 18px rgba(255, 0, 0, 0.35);
+    transform: scale(1.05);
 }
 
-/* Button */
-button{
-    height: 40px;
-    width: 120px;
+
+.btn-box{
     margin-top: 20px;
-    border-radius: 10px;
+    width: 100%;
+    max-width: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+button{
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
     border: none;
     cursor: pointer;
-    position: static; /* removed bottom */
+    font-size: 15px;
+    font-weight: bold;
+    transition: 0.25s ease;
 }
 
 button:hover{
     background-color: rgb(127, 8, 8);
-    color: rgb(249, 245, 245);
-    transform: scale(1.08);
-    filter: drop-shadow(0px 0px 15px rgb(0, 0, 0));
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.5);
 }
 
 /* ===========================
-   ✅ MOBILE RESPONSIVE PART
+   MOBILE RESPONSIVE
    =========================== */
 @media (max-width: 768px){
 
@@ -156,51 +200,38 @@ button:hover{
 
     #logo-section{
         width: 100%;
-        min-height: auto;
         justify-content: center;
         padding: 15px 0;
     }
 
     #loginpage{
         width: 100%;
-        min-height: auto;
         padding: 15px;
     }
 
-    #login-title{
-        font-size: 1rem;
-        width: 100%;
-        margin-top: 10px;
+    #login-title h1{
+        font-size: 1.4rem;
     }
 
     #login-form{
         flex-direction: column;
         gap: 25px;
-        align-items: center;
-        margin-top: 20px;
+        padding: 18px;
     }
 
     #column1, #column2{
         width: 100%;
     }
-
-    button{
-        width: 100%;
-        max-width: 200px;
-    }
 }
 
 /* Extra small phones */
 @media (max-width: 480px){
+
     #login-title h1{
-        font-size: 1.1rem;
+        font-size: 1.2rem;
     }
 
-    label{
-        font-size: 0.85rem;
-    }
-
-    input{
-        padding: 9px;
+    .quote{
+        font-size: 0.9rem;
     }
 }
